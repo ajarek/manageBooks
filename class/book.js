@@ -17,6 +17,7 @@ export class Book {
     thTitle.innerHTML = "Title";
     thAuthor.innerHTML = "Author";
     thISBN.innerHTML = "ISBN";
+    thISBN.classList.add("d-isbn");
     thDelete.innerHTML = "Delete";
     thEdit.innerHTML = "Edit";
     trThead.append(thTitle, thAuthor, thISBN, thDelete, thEdit);
@@ -30,14 +31,14 @@ export class Book {
       tdAuthor.innerHTML = `${this.books[i].author}`
       var tdISBN = document.createElement("td")
       tdISBN.innerHTML = `${this.books[i].isbn}`
+      tdISBN.classList.add("isbn")
       var tdDelete = document.createElement("td")
       tdDelete.innerHTML = `<button class="btn btn-danger" id="delete-book" data-isbn="${this.books[i].isbn}">🗑️</button>`
       var tdEdit = document.createElement("td")
-      tdEdit.innerHTML = `<button class="btn btn-warning" id="edit-book">🖊️</button>`
+      tdEdit.innerHTML = `<button class="btn btn-warning" id="edit-book" data-isbn="${this.books[i].isbn}">🖊️</button>`
       trTbody.append(tdTitle, tdAuthor, tdISBN, tdDelete, tdEdit)
       tbody.append(trTbody)
       booksList.append(thead, tbody)
-     
       container.append(booksList)
     }
     const button=document.createElement("button")

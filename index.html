@@ -11,13 +11,24 @@
       crossorigin="anonymous"
     />
     <title>Manage a list of Books</title>
+    <style>
+      @media (max-width: 600px) { 
+        .container-lg{
+          width: 100vw;
+        }
+        .isbn,.d-isbn{
+          display: none;
+        }
+        .btn-danger,.btn-warning{
+          font-size: 0.5rem;
+        }
+       }
+    </style>
   </head>
   <body>
     <div class="container-lg ">
         <div class="root table-responsive-lg"></div>
-      
-        <button id="add-book" class="btn btn-primary">Add book</button>
-      
+        <button id="add-book" class="btn btn-primary">Add book</button> 
     </div>
     <script type="module" src="script.js"></script>
     <script
